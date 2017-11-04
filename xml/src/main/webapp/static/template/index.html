@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>货单凭证</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style>
+        body {
+            font-family: "Arial Unicode MS", monospace;
+        }
+
+        div {
+            width: 680px;
+            height: 500px;
+            border: 1px solid black;
+            position: absolute;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 600px;
+            position: absolute;
+            left: 40px;
+        }
+
+        tr td {
+            border: 1px solid black;
+            height: 30px;
+            text-align: center;
+        }
+
+        #header {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+
+        }
+
+        #img1 {
+            margin: 20px 80px -20px -80px;
+            width: 40px;
+            height: 40px;
+        }
+
+        #p2 {
+            text-align: right;
+            margin-right: 130px;
+            margin-top: -40px;
+        }
+
+        .kehu {
+            text-align: left;
+            font-weight: 700;
+            border: 0 solid red;
+        }
+
+        .yue {
+            border: 0 solid red;
+            text-align: left;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        #heji {
+            border: 1px solid black;
+            text-align: left;
+        }
+
+        #shupai {
+            position: absolute;
+            right: 25px;
+            margin-top: 10px;
+            width: 20px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <p id="header">
+        <img th:src="${basePath}+'static/image/logo.jpg'" alt="" id="img1"
+             src="/static/image/logo.jpg"/><span>货 单 凭 证</span>
+    </p>
+    <!--/*@thymesVar id="name" type="java.lang.String"*/-->
+    <p id="p2" th:text="'No:'+${name}">No:000000 </p>
+    <table>
+        <tr>
+            <td colspan="3" class="kehu">客户名称：</td>
+
+            <td colspan="3" class="kehu">客户签名：</td>
+
+        </tr>
+        <tr>
+            <td>品名</td>
+            <td>规格</td>
+            <td>单价</td>
+            <td>数量</td>
+            <td>金额</td>
+            <td>备注</td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="6" id="heji">合计：&nbsp;十&nbsp;万&nbsp;仟&nbsp;佰&nbsp;拾&nbsp;元&nbsp;角&nbsp;分&nbsp;￥</td>
+
+
+        </tr>
+        <tr>
+            <td colspan="2" class="yue">上次余额:</td>
+
+            <td class="yue">（大写）：</td>
+        </tr>
+        <tr>
+            <td colspan="2" class="yue">共计余额：</td>
+
+            <td class="yue">（大写）：</td>
+        </tr>
+    </table>
+    <img src="http://i.ebayimg.com/00/s/MTExOFgxNDcy/z/6wYAAOSwa-dWsY5N/%24_1.JPG?set_id=880000500F" alt=""
+         id="shupai"/>　
+    　　　　 　　　　
+</div>
+</body>
+</html>

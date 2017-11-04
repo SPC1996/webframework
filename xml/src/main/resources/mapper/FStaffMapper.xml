@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keessi.xml.mapper.FStaffMapper">
+    <resultMap id="FStaffResultMap" type="com.keessi.xml.entity.FStaff">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="name" column="name"/>
+        <result property="phone" column="phone"/>
+        <result property="level" column="level"/>
+        <result property="salary" column="num"/>
+    </resultMap>
+
+    <select id="selectAll" resultMap="FStaffResultMap">
+        SELECT
+            id,
+            username,
+            password,
+            name,
+            phone,
+            f_staff.level,
+            num
+        FROM f_staff
+            LEFT JOIN f_salary ON f_staff.level = f_salary.level
+    </select>
+
+    <select id="selectOneById" resultMap="FStaffResultMap">
+        SELECT
+            id,
+            username,
+            password,
+            name,
+            phone,
+            f_staff.level,
+            num
+        FROM f_staff
+            LEFT JOIN f_salary ON f_staff.level = f_salary.level
+        WHERE id = #{id}
+    </select>
+
+    <select id="selectOneByUsernameAndPassword" resultMap="FStaffResultMap">
+        SELECT
+            id,
+            username,
+            password,
+            name,
+            phone,
+            f_staff.level,
+            num
+        FROM f_staff
+            LEFT JOIN f_salary ON f_staff.level = f_salary.level
+        WHERE username = #{username} AND password = #{password}
+    </select>
+
+    <select id="selectSomeByKeys" resultMap="FStaffResultMap" parameterType="java.util.Map">
+        SELECT
+        id,
+        username,
+        password,
+        name,
+        phone,
+        f_staff.level,
+        num
+        FROM f_staff
+        LEFT JOIN f_salary ON f_staff.level = f_salary.level
+        <where>
+            <if test="name != null and name != ''">
+                name=#{name}
+            </if>
+            <if test="phone != null and phone != ''">
+                AND phone=#{phone}
+            </if>
+            <if test="level != null and level != ''">
+                AND f_staff.level=#{level}
+            </if>
+        </where>
+    </select>
+</mapper>
